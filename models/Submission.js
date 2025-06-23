@@ -1,17 +1,18 @@
 const mongoose = require("mongoose");
 
-const SubmissionSchema = new mongoose.Schema({
-  question: String,
-  code: String,
-  report: {
-    correctness: String,
-    time_complexity: String,
-    explanation: String
+const submissionSchema = new mongoose.Schema(
+  {
+    question: String,
+    code: String,
+    report: {
+      is_correct: String,
+      correctness: String,
+      time_complexity: String,
+      space_complexity: String,
+      
+    },
   },
-  createdAt: {
-    type: Date,
-    default: Date.now
-  }
-});
+  { timestamps: true }
+);
 
-module.exports = mongoose.model("Submission", SubmissionSchema);
+module.exports = mongoose.model("Submission", submissionSchema);
