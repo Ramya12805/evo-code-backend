@@ -4,7 +4,7 @@ const Submission = require("../models/Submission");
 
 router.post("/", async (req, res) => {
   try {
-    const { question, code, report } = req.body;
+    const { question, code, report, difficulty } = req.body;
     const { is_correct, correctness, time_complexity, space_complexity } = report;
 
     const newSubmission = new Submission({
@@ -16,6 +16,7 @@ router.post("/", async (req, res) => {
         space_complexity,
         is_correct,
       },
+       difficulty,
     });
 
     await newSubmission.save();
@@ -24,3 +25,4 @@ router.post("/", async (req, res) => {
     res.status(500).json({ error: err.message });
   }
 });
+module.exports = router;

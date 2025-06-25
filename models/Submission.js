@@ -9,7 +9,11 @@ const submissionSchema = new mongoose.Schema(
       correctness: String,
       time_complexity: String,
       space_complexity: String,
-      
+    },
+    difficulty: {
+    type: String,
+    enum: ['easy', 'medium', 'hard'], // Optional: restrict values
+    required: true
     },
   },
   { timestamps: true }
