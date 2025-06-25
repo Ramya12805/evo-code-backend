@@ -16,7 +16,7 @@ router.post("/", async (req, res) => {
         space_complexity,
         is_correct,
       },
-       difficulty,
+      difficulty,
     });
 
     await newSubmission.save();

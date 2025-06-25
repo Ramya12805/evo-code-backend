@@ -11,9 +11,9 @@ const submissionSchema = new mongoose.Schema(
       space_complexity: String,
     },
     difficulty: {
-    type: String,
-    enum: ['easy', 'medium', 'hard'], // Optional: restrict values
-    required: true
+      type: String,
+      enum: ['easy', 'medium', 'hard'],
+      required: true,
     },
   },
   { timestamps: true }
