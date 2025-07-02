@@ -12,7 +12,7 @@ const submissionSchema = new mongoose.Schema(
     },
     difficulty: {
       type: String,
-      enum: ['easy', 'medium', 'hard'],
+      enum: ['below_expected', 'as_expected', 'above_expected'],
       required: true,
     },
   },
